@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOMS Navigation Module</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/media/icon.webp">
+</head>
+<body>
+
+    <!--Title/Header-->
+    <div class="header">
+        <div class="page-title">
+            <img id='logo' src="media/images/Logo_Navbar.png" alt="logo" height="75px">
+            <h1 id='heading'>ROOMS Navigation Module</h1>
+        </div>
+
+
+        <!--Navigation Selection Dropdowns-->
+        <div class="drop_option">
+            <div class="arrange">
+
+                <!--Starting Point Dropdown-->
+                <div class="arrage2">
+                    <select name="Start" id="Start" class="optionbox">
+
+                        <option value="" selected>Select Starting Point</option>
+                        <optgroup label="Amenities">
+                            <!--Common Rooms-->
+                            <option value="1001">EE Room</option>
+                            <option value="1002">Female Toilet</option>
+                            <option value="1003">Male Toilet </option>
+                        </optgroup>
+
+                        <optgroup label="First Floor">
+                            <!--Main Rooms-->
+                            <option value="100">Main Entry</option>
+                            <option value="101">GAB 101</option>
+                            <option value="102">GAB 102</option>
+                            <option value="103">GAB 103</option>
+                            <option value="104">GAB 104</option>
+                            <option value="105">GAB 105</option>
+                            <option value="107">GAB 107</option>
+                            <!--Special Rooms-->
+                            <option value="115">Printing Room</option>
+                            <option value="116">Janitor's Closet</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="111">New EE Room</option>
+                            <option value="112">Female Toilet</option>
+                            <option value="113">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Second Floor">
+                            <!--Main Rooms-->
+                            <option value="201">GAB 201</option>
+                            <option value="202A">GAB 202A</option>
+                            <option value="202B">GAB 202B</option>
+                            <option value="203">GAB 203</option>
+                            <option value="205">GAB 205</option>
+                            <option value="206">GAB 206</option>
+                            <option value="207">GAB 207</option>
+                            <option value="208">GAB 208</option>
+                            <option value="209">GAB 209</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="211">EE Room</option>
+                            <option value="212">Female Toilet</option>
+                            <option value="213">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Third Floor">
+                            <!--Main Rooms-->
+                            <option value="301">GAB 301</option>
+                            <option value="301A">GAB 301A</option>
+                            <option value="301B">GAB 301B</option>
+                            <option value="302">GAB 302</option>
+                            <option value="303">GAB 303</option>
+                            <option value="306">GAB 306</option>
+                            <option value="308">GAB 308</option>
+                            <option value="309">GAB 309</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="311">EE Room</option>
+                            <option value="312">Female Toilet</option>
+                            <option value="313">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Fourth Floor">
+                            <!--Main Rooms-->
+                            <option value="401">GAB 401</option>
+                            <option value="402">GAB 402</option>
+                            <option value="403">GAB 403</option>
+                            <option value="404">GAB 404</option>
+                            <option value="405">GAB 405</option>
+                            <option value="406">GAB 406</option>
+                            <option value="410">GAB 410</option>
+                            <!--Special Rooms-->
+                            <option value="414">Storage Room</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="411">EE Room</option>
+                            <option value="412">Female Toilet</option>
+                            <option value="413">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Fifth Floor">
+                            <!--Main Rooms-->
+                            <option value="501">GAB 501</option>
+                            <option value="502">GAB 502</option>
+                            <option value="504">GAB 504</option>
+                            <option value="505">GAB 505</option>
+                            <option value="507">GAB 507</option>
+                            <option value="508">GAB 508</option>
+                            <option value="510">GAB 510</option>
+                            <!--Special Rooms-->
+                            <option value="514">Storage Room</option>
+                            <option value="515">Ante Room</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="511">EE Room</option>
+                            <option value="512">Female Toilet</option>
+                            <option value="513">Male Toilet </option>
+                            -->
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!--Destination Point Dropdown-->
+                <div class="arrage2">
+                    <select name="destination" id="destination" class="optionbox">
+                        <option value="" selected>Select Destination</option>
+
+                        <optgroup label="Amenities">
+                            <!--Common Rooms-->
+                            <option value="1001">EE Room</option>
+                            <option value="1002">Female Toilet</option>
+                            <option value="1003">Male Toilet </option>
+                        </optgroup>
+
+                        <optgroup label="First Floor">
+                            <!--Main Rooms-->
+                            <option value="100">Main Entry</option>
+                            <option value="101">GAB 101</option>
+                            <option value="102">GAB 102</option>
+                            <option value="103">GAB 103</option>
+                            <option value="104">GAB 104</option>
+                            <option value="105">GAB 105</option>
+                            <option value="107">GAB 107</option>
+                            <!--Special Rooms-->
+                            <option value="115">Printing Room</option>
+                            <option value="116">Janitor's Closet</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="111">New EE Room</option>
+                            <option value="112">Female Toilet</option>
+                            <option value="113">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Second Floor">
+                            <!--Main Rooms-->
+                            <option value="201">GAB 201</option>
+                            <option value="202A">GAB 202A</option>
+                            <option value="202B">GAB 202B</option>
+                            <option value="203">GAB 203</option>
+                            <option value="205">GAB 205</option>
+                            <option value="206">GAB 206</option>
+                            <option value="207">GAB 207</option>
+                            <option value="208">GAB 208</option>
+                            <option value="209">GAB 209</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="211">EE Room</option>
+                            <option value="212">Female Toilet</option>
+                            <option value="213">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Third Floor">
+                            <!--Main Rooms-->
+                            <option value="301">GAB 301</option>
+                            <option value="301A">GAB 301A</option>
+                            <option value="301B">GAB 301B</option>
+                            <option value="302">GAB 302</option>
+                            <option value="303">GAB 303</option>
+                            <option value="306">GAB 306</option>
+                            <option value="308">GAB 308</option>
+                            <option value="309">GAB 309</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="311">EE Room</option>
+                            <option value="312">Female Toilet</option>
+                            <option value="313">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Fourth Floor">
+                            <!--Main Rooms-->
+                            <option value="401">GAB 401</option>
+                            <option value="402">GAB 402</option>
+                            <option value="403">GAB 403</option>
+                            <option value="404">GAB 404</option>
+                            <option value="405">GAB 405</option>
+                            <option value="406">GAB 406</option>
+                            <option value="410">GAB 410</option>
+                            <!--Special Rooms-->
+                            <option value="414">Storage Room</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="411">EE Room</option>
+                            <option value="412">Female Toilet</option>
+                            <option value="413">Male Toilet </option>
+                            -->
+                        </optgroup>
+
+                        <optgroup label="Fifth Floor">
+                            <!--Main Rooms-->
+                            <option value="501">GAB 501</option>
+                            <option value="502">GAB 502</option>
+                            <option value="504">GAB 504</option>
+                            <option value="505">GAB 505</option>
+                            <option value="507">GAB 507</option>
+                            <option value="508">GAB 508</option>
+                            <option value="510">GAB 510</option>
+                            <!--Special Rooms-->
+                            <option value="514">Storage Room</option>
+                            <option value="515">Ante Room</option>
+                            <!--
+                            --Common Rooms--
+                            <option value="511">EE Room</option>
+                            <option value="512">Female Toilet</option>
+                            <option value="513">Male Toilet </option>
+                            -->
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!--Navigation Selection Submit Button-->
+            <div class="arrage2" id="mobgo">
+                <button class="optionbox" id="go">Find Room</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Map Floor Selection Buttons-->
+    <div id="circular_button_div">
+        <button class="circular_button" id="1">1</button>
+        <button class="circular_button" id="2">2</button>
+        <button class="circular_button" id="3">3</button>
+        <button class="circular_button" id="4">4</button>
+        <button class="circular_button" id="5">5</button>
+        <!--
+        <button class="circular_button" id="R"> <img id="reset" src="media/reset2white.png" alt="R" height="35px" ; /></button>
+
+                    <button class="circular_button re-focus-button">
+            <img id='refocus' class="refocus-button-image" src="media/Images/refocus.png" alt="refocus" />
+        </button>
+        -->
+
+
+
+    </div>
+
+
+    <!--Map Display-->
+    <div id='map'>
+        <!-------
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet" type="text/javascript"></script>
+        <script src="https://unpkg.com/leaflet-ant-path" type="text/javascript"></script>
+        --->
+    </div>
+
+    <!--Footer/Room Title-->
+    <div class="footer">
+        <div class="footer-box">
+            <!----
+            <h1 class="room-title">$Room Selected</h1>
+                -->
+            <h1 class="room-title">Gusaling Andres Bonifacio</h1>
+        </div>
+
+    </div>
+
+    <script src="server.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
+
+<!----
+<!doctype html>
+<html lang="en">
+<head>
+    <title>UPM CAS Pathfinder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Title/Header-->
+<!----
+    <div class="header">
+        <div class="page-title">
+            <img id='logo' src="media/images/Logo_Navbar.png" alt="logo" height="75px">
+            <h1 id='heading'>ROOMS Navigation Module</h1>
+        </div>
+        <!-- <div class="header">
+        <h1 id='heading'>UPM CAS Pathfinder</h1>
+    </div> -->
+<!----
+        <div class="drop_option">
+            <div class="arrange">
+                <div class="arrage2">
+                    <label class="labelmaker">Start:</label>
+                    <select aria-label="Start" name="Start" id="Start" class="optionbox">
+                        <optgroup label="1st floor">
+                            <option value="100">Main Entry</option>
+                            <option value="101">GAB 101</option>
+                            <option value="102">GAB 102</option>
+                            <option value="103">GAB 103</option>
+                            <option value="104">GAB 104</option>
+                            <option value="105">GAB 105</option>
+                            <option value="106">Printing Room</option>
+                            <option value="107">GAB 107</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="arrage2">
+                    <label class="labelmaker">Destination:</label>
+                    <select aria-label="destination" name="destination" id="destination" class="optionbox">
+                        <optgroup label="1st floor">
+                            <option value="100">Main Entry</option>
+                            <option value="101">GAB 101</option>
+                            <option value="102">GAB 102</option>
+                            <option value="103">GAB 103</option>
+                            <option value="104">GAB 104</option>
+                            <option value="105">GAB 105</option>
+                            <option value="106">Printing Room</option>
+                            <option value="107">GAB 107</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!--Navigation Selection Submit Button-->
+<!----
+            <div class="arrage2" id="mobgo">
+                <label style="visibility: hidden; font-size: x-large;">.</label>
+                <button class="optionbox" id="go">Find Path</button>
+            </div>
+        </div>
+
+        <!--Map Floor Selection Buttons-->
+<!----
+        <div id="circular_button_div">
+            <button class="circular_button" id="1">1</button>
+            <button class="circular_button" id="2">2</button>
+            <button class="circular_button" id="3">3</button>
+            <button class="circular_button" id="4">4</button>
+            <button class="circular_button" id="5">5</button>
+            <button class="circular_button" id="R"> <img id="reset" src="media/reset2white.png" alt="R" height="35px" ; /></button>
+            <button class="circular_button re-focus-button">
+                <img id='refocus' class="refocus-button-image" src="media/Images/refocus.png" alt="refocus" />
+            </button>
+        </div>
+    </div>
+
+        <div id="map"></div>
+        <script src="server.js"></script>
+
+</body>
+</html>
+>

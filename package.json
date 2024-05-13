@@ -1,0 +1,21 @@
+{
+  "name": "cas-pathfinder",
+  "version": "1.0.0",
+  "description": "Client project: Pathfinder for CAS Building",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "beefy index.js:server.js --live",
+    "bundle": "browserify index.js -o server.js"
+  },
+  "keywords": [],
+  "author": "CMSC 122 - Group 6",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.8",
+    "browserify": "^17.0.0"
+  }
+}
