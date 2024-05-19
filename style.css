@@ -90,9 +90,6 @@ body{
     cursor: pointer;
 }
 
-.circular_button:active {
-    background-color: #517c34; 
-}
 
 /*
 .circular_button:last-of-type{
