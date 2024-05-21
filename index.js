@@ -28,7 +28,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.circleMarker([14.58025,120.98475]).addTo(map);
 
 //initialize first floor map
-fetch('./map/casfloor1.geojson').then(response =>  response.json()).then(data => {
+fetch('./map/Floorplan/1stMap.geojson').then(response =>  response.json()).then(data => {
     L.geoJSON(data, {
         style:{color: '#517c34',weight: 1,opacity: 1},
     }).addTo(map);
@@ -40,7 +40,7 @@ document.getElementById('1').addEventListener('click', () => {
     map.eachLayer(function (layer) {
         if (!!layer.toGeoJSON) { map.removeLayer(layer); }
     });
-    fetch('./map/casfloor1.geojson').then(response => response.json()).then(data => {
+    fetch('./map/Floorplan/1stMap.geojson').then(response => response.json()).then(data => {
         L.geoJSON(data, {
             style: { color: '#517c34', weight: 1, opacity: 1 },
         }).addTo(map);
@@ -53,7 +53,7 @@ document.getElementById('2').addEventListener('click', () => {
     map.eachLayer(function (layer) {
         if (!!layer.toGeoJSON) { map.removeLayer(layer); }
     });
-    fetch('./map/casfloor2.geojson').then(response => response.json()).then(data => {
+    fetch('./map/Floorplan/2ndMap.geojson').then(response => response.json()).then(data => {
         L.geoJSON(data, {
             style: { color: '#517c34', weight: 1, opacity: 1 },
         }).addTo(map);
@@ -66,7 +66,33 @@ document.getElementById('3').addEventListener('click', () => {
     map.eachLayer(function (layer) {
         if (!!layer.toGeoJSON) { map.removeLayer(layer); }
     });
-    fetch('./map/casfloor3.2.geojson').then(response => response.json()).then(data => {
+    fetch('./map/Floorplan/3rdMap.geojson').then(response => response.json()).then(data => {
+        L.geoJSON(data, {
+            style: { color: '#517c34', weight: 1, opacity: 1 },
+        }).addTo(map);
+        map.fitBounds(L.geoJSON(data).getBounds());
+    }).catch(error => console.error('out of service.. ~_~  @_@', error));
+
+});
+
+document.getElementById('4').addEventListener('click', () => {
+    map.eachLayer(function (layer) {
+        if (!!layer.toGeoJSON) { map.removeLayer(layer); }
+    });
+    fetch('./map/Floorplan/4thMap.geojson').then(response => response.json()).then(data => {
+        L.geoJSON(data, {
+            style: { color: '#517c34', weight: 1, opacity: 1 },
+        }).addTo(map);
+        map.fitBounds(L.geoJSON(data).getBounds());
+    }).catch(error => console.error('out of service.. ~_~  @_@', error));
+
+});
+
+document.getElementById('5').addEventListener('click', () => {
+    map.eachLayer(function (layer) {
+        if (!!layer.toGeoJSON) { map.removeLayer(layer); }
+    });
+    fetch('./map/Floorplan/5thMap.geojson').then(response => response.json()).then(data => {
         L.geoJSON(data, {
             style: { color: '#517c34', weight: 1, opacity: 1 },
         }).addTo(map);
