@@ -14,7 +14,7 @@ let dijfunc2 = (src,des) =>{
     if(dijkstra.hasPathTo(des)){
         let res = [[],[],[],[],[],[],[]];
         var path = dijkstra.pathTo(des);
-        let curr_floor =0;
+        let curr_floor = 1;
         let temp_con=[];
         for(var i = 0; i < path.length; ++i){
             e = path[i];
@@ -53,43 +53,43 @@ let dijfunc2 = (src,des) =>{
         return res;
     }
     else{
-        console.log('error hai bhaisaab service down hai shayad');
+        console.log('path error');
     }
 }
-let nearest_amenity = (src,keyword) =>{
-    let des = segregate_aminity(src,keyword);
-    var dijkstra = new jsgraphs.Dijkstra(g, src);
-    let distance = 9999;
-    let distance_index=null;
-    for (let i = 0; i < des.length; i++) {
-        if(dijkstra.distanceTo(des[i])<distance){
-            distance_index = des[i];
-            distance = dijkstra.distanceTo(des[i]);
-        }
-    }
-    return distance_index;
-}
-let segregate_aminity = (src,keyword) =>{
-    if(keyword==999){
-        if(src>0 && src<1000 || src>=6000 && src<7000)  return[83,51];
-        else if(src>=1000 && src<2000)  return[1083,1051];
-        else if(src>=2000 && src<3000)  return[2083,2051];
-        else if(src>=3000 && src<4000)  return[3083,3051];
-        else if(src>=4000 && src<5000)  return[4083,4051];
-        else if(src>=5000 && src<6000)  return[5083,5051];
-    }
-    else if(keyword==998){
-        if(src>0 && src<1000 || src>=6000 && src<7000)  return[99,29];
-        else if(src>=1000 && src<2000)  return[1099,1029];
-        else if(src>=2000 && src<3000)  return[2099,2029];
-        else if(src>=3000 && src<4000)  return[3099,3029];
-        else if(src>=4000 && src<5000)  return[4099,4029];
-        else if(src>=5000 && src<6000)  return[5099,5029];   
-    }
-    else{
-        console.log('second service me error hai bhaisaab service down hai shayad');
-    }
-}
+// let nearest_amenity = (src,keyword) =>{
+//     let des = segregate_aminity(src,keyword);
+//     var dijkstra = new jsgraphs.Dijkstra(g, src);
+//     let distance = 9999;
+//     let distance_index=null;
+//     for (let i = 0; i < des.length; i++) {
+//         if(dijkstra.distanceTo(des[i])<distance){
+//             distance_index = des[i];
+//             distance = dijkstra.distanceTo(des[i]);
+//         }
+//     }
+//     return distance_index;
+// }
+// let segregate_aminity = (src,keyword) =>{
+//     if(keyword==999){
+//         if(src>0 && src<1000 || src>=6000 && src<7000)  return[83,51];
+//         else if(src>=1000 && src<2000)  return[1083,1051];
+//         else if(src>=2000 && src<3000)  return[2083,2051];
+//         else if(src>=3000 && src<4000)  return[3083,3051];
+//         else if(src>=4000 && src<5000)  return[4083,4051];
+//         else if(src>=5000 && src<6000)  return[5083,5051];
+//     }
+//     else if(keyword==998){
+//         if(src>0 && src<1000 || src>=6000 && src<7000)  return[99,29];
+//         else if(src>=1000 && src<2000)  return[1099,1029];
+//         else if(src>=2000 && src<3000)  return[2099,2029];
+//         else if(src>=3000 && src<4000)  return[3099,3029];
+//         else if(src>=4000 && src<5000)  return[4099,4029];
+//         else if(src>=5000 && src<6000)  return[5099,5029];   
+//     }
+//     else{
+//         console.log('second service me error hai bhaisaab service down hai shayad');
+//     }
+// }
 
 // Middleware to parse JSON bodies
 app.use(express.json());
